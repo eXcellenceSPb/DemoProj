@@ -1,9 +1,7 @@
-package com.example.demo.controller;
+package com.proj.demo.controller;
 
-import com.example.demo.model.Parcells;
-import com.example.demo.model.Snt;
-import com.example.demo.model.Users;
-import com.example.demo.service.ParcellsService;
+import com.proj.demo.model.Parcells;
+import com.proj.demo.service.ParcellsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

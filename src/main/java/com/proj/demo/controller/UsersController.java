@@ -1,7 +1,7 @@
-package com.example.demo.controller;
+package com.proj.demo.controller;
 
-import com.example.demo.model.Users;
-import com.example.demo.service.UsersService;
+import com.proj.demo.model.Users;
+import com.proj.demo.service.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

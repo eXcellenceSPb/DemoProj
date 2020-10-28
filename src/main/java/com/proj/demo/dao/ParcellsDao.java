@@ -1,6 +1,6 @@
-package com.example.demo.dao;
+package com.proj.demo.dao;
 
-import com.example.demo.model.Parcells;
+import com.proj.demo.model.Parcells;
 
 import java.util.List;
 

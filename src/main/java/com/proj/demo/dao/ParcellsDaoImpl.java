@@ -1,13 +1,10 @@
-package com.example.demo.dao;
+package com.proj.demo.dao;
 
-import com.example.demo.model.Parcells;
-import com.example.demo.model.Parcels_users;
+import com.proj.demo.model.Parcells;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.Query;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 @Repository("ParcellsDao")

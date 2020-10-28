@@ -1,6 +1,6 @@
-package com.example.demo.service;
+package com.proj.demo.service;
 
-import com.example.demo.model.Parcells;
+import com.proj.demo.model.Parcells;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

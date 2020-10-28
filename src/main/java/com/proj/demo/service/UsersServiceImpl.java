@@ -1,7 +1,7 @@
-package com.example.demo.service;
+package com.proj.demo.service;
 
-import com.example.demo.dao.UsersDao;
-import com.example.demo.model.Users;
+import com.proj.demo.dao.UsersDao;
+import com.proj.demo.model.Users;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;

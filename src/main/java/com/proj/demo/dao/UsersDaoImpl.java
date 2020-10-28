@@ -1,9 +1,8 @@
-package com.example.demo.dao;
+package com.proj.demo.dao;
 
-import com.example.demo.model.Users;
+import com.proj.demo.model.Users;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.servlet.handler.UserRoleAuthorizationInterceptor;
 
 import javax.persistence.Query;
 import java.util.List;

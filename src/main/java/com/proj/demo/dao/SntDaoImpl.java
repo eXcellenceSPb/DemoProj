@@ -1,6 +1,6 @@
-package com.example.demo.dao;
+package com.proj.demo.dao;
 
-import com.example.demo.model.Snt;
+import com.proj.demo.model.Snt;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 

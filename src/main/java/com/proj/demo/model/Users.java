@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.proj.demo.model;
 
 import javax.persistence.*;
 import java.sql.Date;
