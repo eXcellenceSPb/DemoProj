@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Список СНТ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script th:src="@{js/snt.js}" type="text/javascript"></script>
+    <style>
+        footer {
+            background-color: #555;
+            color: white;
+            padding: 15px;
+        }
+
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand">Админка</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/snt">Список СНТ</a></li>
+            <li><a href="/users">Список пользователей</a></li>
+            <li><a href="/parcells">Список участков</a></li>
+            <li class="active"><a href="/devices">Список счетчиков</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="col-sm-9">
+        <div class="container-fluid">
+            <h2>Таблица СНТ</h2>
+            <p>Список всех добавленных в базу товариществ</p>
+            <table class="table table-hover table-bordered table-responsive table-condensed">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Название</th>
+                    <!--                            <th class="invisible">price_tarif_1</th>-->
+                    <!--                            <th class="invisible">price_tarif_2</th>-->
+                    <!--                            <th class="invisible">price_tarif_3</th>-->
+                    <!--                            <th class="invisible">price_tarif_4</th>-->
+                    <th>Область</th>
+                    <th>Район</th>
+                    <th>Населенный пункт</th>
+                    <th>Массив</th>
+                    <th>Получатель</th>
+                    <th>ИНН</th>
+                    <th>КПП</th>
+                    <th>ОКТМО</th>
+                    <th>Название счета</th>
+                    <th>Номер счета</th>
+                    <th>Бик банка</th>
+                    <th>Кор. счет</th>
+                    <!--                            <th>req_json</th>-->
+                    <!--                            <th>connected_types</th>-->
+                </tr>
+                </thead>
+                <tbody id="MyTable">
+                <tr th:each="snt : ${snt}">
+                    <td class="uid" th:text="${snt.id}"></td>
+                    <td class="uname" th:text="${snt.name}"></td>
+                    <!--                            <td class="upt1 invisible" th:text="${snt.price_tarif_1}"></td>-->
+                    <!--                            <td class="upt2 invisible" th:text="${snt.price_tarif_2}"></td>-->
+                    <!--                            <td class="upt3 invisible" th:text="${snt.price_tarif_3}"></td>-->
+                    <!--                            <td class="upt4 invisible" th:text="${snt.price_tarif_4}"></td>-->
+                    <td class="uadr" th:text="${snt.address_region}"></td>
+                    <td class="uadd" th:text="${snt.address_district}"></td>
+                    <td class="uadl" th:text="${snt.address_locality}"></td>
+                    <td class="uada" th:text="${snt.address_array}"></td>
+                    <td class="ureceiver" th:text="${snt.receiver}"></td>
+                    <td class="uinn" th:text="${snt.inn}"></td>
+                    <td class="ukpp" th:text="${snt.kpp}"></td>
+                    <td class="uoktmo" th:text="${snt.oktmo}"></td>
+                    <td class="uaccname" th:text="${snt.account_name}"></td>
+                    <td class="uacnum" th:text="${snt.account_number}"></td>
+                    <td class="ubik" th:text="${snt.bik}"></td>
+                    <td class="ukc" th:text="${snt.korr_account}"></td>
+                    <!--                            <td class="ureq" th:text="${snt.requisites_json}"></td>-->
+                    <!--                            <td class="utype" th:text="${snt.connected_types}"></td>-->
+                </tr>
+                </tbody>
+            </table>
+            <div th:if="${snt.totalPages > 0}" class="pagination"
+                 th:each="pageNumber : ${pageNumbers}">
+                <a th:href="@{/snt(size=${snt.size}, page=${pageNumber})}"
+                   th:text=${pageNumber}
+                   th:class="${pageNumber==snt.number + 1} ? active"></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="container-fluid">
+    <div style="text-align: center;"><p>© All rights reserved 2020 </p></div>
+</footer>
+
+</body>
+</html>
